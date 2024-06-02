@@ -1,12 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
 import ResultsList from './components/ResultList/ResultList.js'; // TODO: same as below 
 import SearchBar from './components/SearchBar/SearchBar.js'; // TODO: somtimes i have to specify SearchBar.js directly. why ??
 import fetchService from './services/fetchService';
+
 import Box from '@mui/material/Box';
 
-function App() {
+export default function App() {
   const [results, setResults] = useState([]);
 
   const handleSearch = (query) => {
@@ -30,11 +30,15 @@ function App() {
   return (
     <>
       <Box className='App' 
+        sx={{ 
+          gap: 2,
+          paddingTop: results.length > 0 ? '5vh' : '40vh',
+          transition: 'padding-top 0.65s',
+        }}>
         <SearchBar onSearch={handleSearch} listLength={results.length} />
         <ResultsList results={results} />
       </Box>
     </>
   );
-}
+};
 
-export default App;

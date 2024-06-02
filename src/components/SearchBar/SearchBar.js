@@ -9,7 +9,7 @@ SearchBar.propTypes = {
   onSearch: PropTypes.func.isRequired
 };
 
-export default function SearchBar({ onSearch }) {
+export default function SearchBar({ onSearch, listLength }) {
   return (
     <Box 
       component="form" 
@@ -17,6 +17,8 @@ export default function SearchBar({ onSearch }) {
       position="relative"
       autoComplete="off"
       sx={{
+        transform: listLength > 0 ? 'translateY(0)' : 'translateY(-15%)',
+        transition: 'transform 0.5s ease 0.3s',
         backgroundColor: 'oldlace',
         width: 400,
     }}    
@@ -33,6 +35,7 @@ export default function SearchBar({ onSearch }) {
           disableUnderline: true,
           style: { textAlign: 'center'},
             sx: { 
+                borderRadius: listLength > 0 ? "25px 25px 0 0"  : 10, 
                 fontSize: 16, 
                 disableUnderline: true,
                 paddingLeft: 1,
