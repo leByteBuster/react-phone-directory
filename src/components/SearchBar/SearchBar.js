@@ -33,7 +33,7 @@ export default function SearchBar({ onSearch, listLength }) {
         InputProps={
           { 
           disableUnderline: true,
-          style: { textAlign: 'center'},
+          style: { transition: "border-radius 0.4s ease", },
             sx: { 
                 borderRadius: listLength > 0 ? "25px 25px 0 0"  : 10, 
                 fontSize: 16, 
