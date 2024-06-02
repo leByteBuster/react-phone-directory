@@ -35,6 +35,11 @@ export default function ResultList({ results }) {
         rowsPerPageOptions={[1]}
         localeText={{noRowsLabel:""}}
         hideFooter={true}
+        initialState={{
+          sorting: {
+            sortModel: [{ field: 'name', sort: 'asc' }],
+          },
+        }}
         sx={{
             height: '100%',
             maxHeight: '100%',
