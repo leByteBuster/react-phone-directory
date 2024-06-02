@@ -1,0 +1,16 @@
+-[x] create search bar
+-[x] create list
+  -[x] use mui data grid for table
+-[x] create fetch service
+-[x] use css transitions for smootheness
+
+-[] change font-family of text-field (so caret is not positioned weirdly anymore)
+  - cause: Helvetica 
+  - Roboto not working somehow
+-[] media queries for different screen sizes (use rem and/or em - to support safari)
+-[] define API
+-[] choose database 
+-[] in App.scss see what we can move to mui styling
+-[] use mixins in css or see how its done with mui
+-[] introdue themes for different styles
+-[] create button buttons to change themes
