@@ -4,6 +4,11 @@
 -[x] create fetch service
 -[x] use css transitions for smootheness
 
+-[] correct filtering of names 
+  -[] (only match from beginning ?) 
+  -[] don't care about capital letters
+-[x] sort list for names
+  -[] is sorted for prenames now. maybe sort for surenames ?
 -[] change font-family of text-field (so caret is not positioned weirdly anymore)
   - cause: Helvetica 
   - Roboto not working somehow
