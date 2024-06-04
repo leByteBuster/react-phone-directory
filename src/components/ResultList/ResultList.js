@@ -16,20 +16,32 @@ ResultList.propTypes = {
 };
 
 const columns = [
-  { field: 'name', headerName: 'Name', width: 180 },
-  { field: 'phone', headerName: 'Phone Number', width: 180 },
+  { field: 'name', headerName: 'Name', width: 220 },
+  { field: 'phone', headerName: 'Phone Number', width: 160 },
 ];
 
-
 export default function ResultList({ results }) {
+
   return (
-  <Container sx={{ width: 450, maxHeight: '80vh', visibility: results.length > 0 ? 'visible' : 'hidden' }}>
-    <Box sx={{ height: '100%', width: '100%'}}>
+  <Container 
+    sx={{ 
+      width: 450, 
+      maxHeight: '80vh',
+      visibility: results.length > 0 ? 'visible' : 'hidden' 
+    }}
+  >
+    <Box 
+      sx={{ 
+        height: '100%', 
+        width: '100%'
+      }}
+    >
       <DataGrid
         slots={{
           columnHeaders: () => null,
         }}
         rows={results}
+        columnHeaderHeight={0}
         columns={columns}
         pageSize={1}
         rowsPerPageOptions={[1]}
@@ -41,10 +53,16 @@ export default function ResultList({ results }) {
           },
         }}
         sx={{
+            borderColor: 'primary.main',
+            rowBorder: 'none',
+            rowBorderColor: 'primary.light',
             height: '100%',
             maxHeight: '100%',
-            '& .MuiDataGrid-virtualScroller': {
-              maxHeight: '100%',
+            fontSize: 14,
+            '& .MuiDataGrid-cell': {
+              paddingLeft: '2rem',
+              borderTop: '0',
+            },
             },
           }}
       />

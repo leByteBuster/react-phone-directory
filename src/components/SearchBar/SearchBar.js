@@ -19,7 +19,6 @@ export default function SearchBar({ onSearch, listLength }) {
       sx={{
         transform: listLength > 0 ? 'translateY(0)' : 'translateY(-15%)',
         transition: 'transform 0.5s ease 0.3s',
-        backgroundColor: 'oldlace',
         width: 400,
     }}    
     >
@@ -28,7 +27,6 @@ export default function SearchBar({ onSearch, listLength }) {
         size="small"
         className='search-field'
         variant="filled"
-        //label="search"
         placeholder="Search..."
         InputProps={
           { 
@@ -36,7 +34,7 @@ export default function SearchBar({ onSearch, listLength }) {
           style: { transition: "border-radius 0.4s ease", },
             sx: { 
                 borderRadius: listLength > 0 ? "25px 25px 0 0"  : 10, 
-                fontSize: 16, 
+                fontSize: '1.6rem', 
                 disableUnderline: true,
                 paddingLeft: 1,
                 paddingBottom: 1.8,
