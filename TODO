@@ -3,19 +3,26 @@
   -[x] use mui data grid for table
 -[x] create fetch service
 -[x] use css transitions for smootheness
+-[x] change color and background of scrollbar (removed for firefox)
+  -[x] sort list for names
 
+-[] additional IDEAS
+  -[] introduce themes for different styles
+  -[] add back or x icon to the right of search bar as soon as something is entered in text field 
+  -[] add search icon if not text is entered ?  
+  -[] maybe use reset CSS stuff for browser inconsistencies: 
+    - https://stackoverflow.com/questions/56310875/what-is-best-practice-of-themeprovider-in-styled-components
+-[] try to deal with flickering of result list if possible (maybe bc of mui data grid)
 -[] correct filtering of names 
   -[] (only match from beginning ?) 
+  -[] filter for surnames not prenames ? 
   -[] don't care about capital letters
--[x] sort list for names
-  -[] is sorted for prenames now. maybe sort for surenames ?
--[] change font-family of text-field (so caret is not positioned weirdly anymore)
-  - cause: Helvetica 
-  - Roboto not working somehow
+-[x] change font-family of text-field (so caret is not positioned weirdly anymore)
+  - [x] cause: Helvetica 
+  - [x] add Roboto 
 -[] media queries for different screen sizes (use rem and/or em - to support safari)
 -[] define API
 -[] choose database 
 -[] in App.scss see what we can move to mui styling
 -[] use mixins in css or see how its done with mui
--[] introdue themes for different styles
 -[] create button buttons to change themes
