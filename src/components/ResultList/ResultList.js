@@ -63,6 +63,37 @@ export default function ResultList({ results }) {
               paddingLeft: '2rem',
               borderTop: '0',
             },
+
+            // scrollbar
+
+            /* scrollbar only for firefox because
+             * scrollbar styling possibilities are not satisfying */
+            '@-moz-document url-prefix()': {
+              '& .MuiDataGrid-scrollbar': {
+                overflowX: 'hidden', 
+                overflowY: 'hidden',
+              },
+            },
+
+            scrollbarWidth: 'thin',
+
+            /* not working with internal theme variables primary, secondary..
+             * little hack needed. ditch scrollbar in firefox for now */
+            //scrollbarColor: 'primary.dark primary.main',
+ 
+            // style scrollbar for webkit browsers
+            "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
+              backgroundColor: "primary.main",
+              borderRadius: "20px",
+              width: '0.5em',
+            },
+            "&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb": {
+              borderRadius: "20px",
+              backgroundColor: "primary.dark",
+              minHeight: 24,
+            },
+            "&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover": {
+              backgroundColor: "primary.dark",
             },
           }}
       />
