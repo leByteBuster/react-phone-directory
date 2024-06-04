@@ -21,8 +21,13 @@
   - [x] cause: Helvetica 
   - [x] add Roboto 
 -[] media queries for different screen sizes (use rem and/or em - to support safari)
+  -[] search bar must be resizable
 -[] define API
 -[] choose database 
 -[] in App.scss see what we can move to mui styling
 -[] use mixins in css or see how its done with mui
 -[] create button buttons to change themes
+-[] see if i can throw out redundancy in themes
+-[] lint everything
+  -[] same "" or '' everywhere
+  -[] check indention (especially html)
