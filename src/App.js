@@ -15,10 +15,7 @@ const lightTheme = createTheme({
     mode: 'light',
     primary: {
       main: '#f0ead3', 
-    },
-    background: {
-      //default: '#ffffff',
-      //paper: '#f5f5f5',
+      lightdark: '#e2d7ab'
     },
   },
  });
@@ -27,6 +24,7 @@ const orangeTheme = createTheme({
   palette: {
     primary: {
       main: '#FFA500', 
+      lightdark: '#eda012'
     },
   },
 });
@@ -44,6 +42,7 @@ const roseTheme = createTheme({
   palette: {
     primary: {
       main: '#E1AFD1',
+      lightdark: '#dfa9ce'
     },
   },
 });

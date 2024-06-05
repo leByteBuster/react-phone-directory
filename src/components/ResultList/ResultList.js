@@ -53,9 +53,8 @@ export default function ResultList({ results }) {
           },
         }}
         sx={{
-            borderColor: 'primary.main',
+            borderColor: 'primary.lightdark',
             rowBorder: 'none',
-            rowBorderColor: 'primary.light',
             height: '100%',
             maxHeight: '100%',
             fontSize: 14,
