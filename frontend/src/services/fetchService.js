@@ -1,13 +1,13 @@
-const API_BASE_URL = 'tobedone';
+const API_BASE_URL = 'http://localhost:5000';
 
 const fetchService = {
 
   // basic fetch function. TODO: pass typed in letters to filter result server side
-  fetchData: async () => {
+  fetchPhoneBookEntries: async (query) => {
     try {
-      const response = await fetch(`${API_BASE_URL}/endpoint`);
+      const response = await fetch(`${API_BASE_URL}/search?name=${query}`);
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error('Bad network response');
       }
       return await response.json();
     } catch (error) {
@@ -17,7 +17,7 @@ const fetchService = {
     }
   },
 
-  mockFetch: (query) => {
+  mockFetchPhoneBookEntries: (query) => {
     return new Promise((resolve) => {
         setTimeout(() => {
             const data = [

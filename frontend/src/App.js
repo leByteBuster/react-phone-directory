@@ -87,7 +87,7 @@ export default function App() {
     }
     try {
       // TODO: start apiService with capital letter ? 
-      fetchService.mockFetch(query).then((tmpRes) => tmpRes.json()).then((result => {
+      fetchService.fetchPhoneBookEntries(query).then((result => {
         console.log(result);
         setResults(result);}
       ));
