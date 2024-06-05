@@ -12,11 +12,12 @@ const fetchService = {
       return await response.json();
     } catch (error) {
       console.error('Error fetching data:', error);
-      // Handle error appropriately
+      // TODO Handle error appropriately
       throw error;
     }
   },
 
+  // TODO apply json() directly
   mockFetchPhoneBookEntries: (query) => {
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -30,7 +31,8 @@ const fetchService = {
               { "id": 7, "name": "Mohammod Finch", "phone": "0171/30608407" },
               { "id": 8, "name": "Khaleesi Randolph", "phone": "0171/75813522" },
               { "id": 9, "name": "Bryan Rankin", "phone": "0171/38068474" },
-              { "id": 10, "name": "Luke Masonnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn", "phone": "0176/47664269" },
+              // edge case
+              { "id": 10, "name": "Luke Masonnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn", "phone": "0176/476642000000000000000069" },
               { "id": 11, "name": "Luke Mason", "phone": "0176/47664269" },
               { "id": 12, "name": "Luke Mason", "phone": "0176/47664269" },
               { "id": 13, "name": "Luke Mason", "phone": "0176/47664269" },
@@ -58,7 +60,7 @@ const fetchService = {
               { "id": 35, "name": "Luke Mason", "phone": "0176/47664269" },
             ];
             var filtered = data.filter(entry => entry.name.includes(query))
-            resolve({ json: () => Promise.resolve(filtered) });
+            resolve({ json: () => Promise.resolve(filtered)});
         }, 100); // simulate network delay
     });
 }
