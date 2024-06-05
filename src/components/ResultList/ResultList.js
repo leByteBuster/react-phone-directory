@@ -54,6 +54,8 @@ export default function ResultList({ results }) {
         }}
         sx={{
             borderColor: 'primary.lightdark',
+            borderWidth: 3,
+            borderRadius: "0 0 4px 4px",
             rowBorder: 'none',
             height: '100%',
             maxHeight: '100%',
