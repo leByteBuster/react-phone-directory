@@ -55,14 +55,22 @@ export default function ResultList({ results }) {
         sx={{
             borderColor: 'primary.lightdark',
             borderWidth: 3,
-            borderRadius: "0 0 4px 4px",
-            rowBorder: 'none',
+            borderRadius: "0 0 25px 25px",
             height: '100%',
             maxHeight: '100%',
-            fontSize: 14,
+            fontSize: 15,
+            fontWeight: 400,
             '& .MuiDataGrid-cell': {
               paddingLeft: '2rem',
-              borderTop: '0',
+              border: 'none',
+            },
+          
+           
+           /* this hack is needed to remove the top border of the 
+            * sometimes appearing filler space in the result list.
+            * Couldn't find a cleaner solution so far */
+          '& .MuiDataGrid-filler *': {
+              borderTop: "none",
             },
 
             // scrollbar

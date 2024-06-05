@@ -23,9 +23,12 @@ const lightTheme = createTheme({
 const orangeTheme = createTheme({
   palette: {
     primary: {
-      main: '#FFA500', 
+      main: '#ffbf4a', 
       lightdark: '#eda012'
     },
+    text: {
+      primary: '#353535'
+    }
   },
 });
 
@@ -44,6 +47,9 @@ const roseTheme = createTheme({
       main: '#E1AFD1',
       lightdark: '#dfa9ce'
     },
+    text: {
+      primary: '#353535'
+    }
   },
 });
 
