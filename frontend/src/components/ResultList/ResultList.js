@@ -41,6 +41,7 @@ export default function ResultList({ results }) {
           columnHeaders: () => null,
         }}
         rows={results}
+        getRowId={(row) => row.phone}
         columnHeaderHeight={0}
         columns={columns}
         pageSize={1}
