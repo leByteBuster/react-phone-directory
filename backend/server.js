@@ -1,6 +1,7 @@
-const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const express = require('express');
+const { Pool } = require('pg');
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
@@ -8,7 +9,13 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const phonebookData = require('./phonebook.json'); // Assuming your phonebook data is in this file
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+});
+
+pool.on('connect', () => {
+  serverLog('Healthcheck: server connected to the database');
+});
 
 // Swagger setup
 const swaggerOptions = {
@@ -48,25 +55,69 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
  *               items:
  *                 type: object
  *                 properties:
+ *                   id:
+ *                     type: string
  *                   name:
  *                     type: string
  *                   phone:
  *                     type: string
  */
-app.get('/search', (req, res) => {
+
+app.get('/search', async (req, res) => {
   const { name } = req.query;
   if (!name) {
-    return res.status(400).send({ error: 'Passing name parameter is required' });
+    serverLog(`/search access without parameter `);
+    return res.status(400).send({ error: '400: Name query parameter is required' });
   }
-  const searchName = name.toLowerCase();
-  const results = phonebookData.filter(entry =>
-    entry.name.toLowerCase().includes(searchName)
-  );
-  res.json(results);
+
+  try {
+    const matchQuery = `${name.toLowerCase()}`;
+    const results = await pool.query(
+      `SELECT * 
+        FROM contacts 
+        WHERE LOWER(name) LIKE $1 || '%'
+           OR LOWER(SUBSTRING(name, POSITION(' ' IN name) + 1)) LIKE $1 || '%' `,
+      [matchQuery]
+    );
+    res.json(results.rows);
+  } catch (err) {
+    serverLog(`Database query failed on api access '/search': ${err}`);
+    res.status(500).send({ error: '500: Database query failed' });
+  }
 });
 
+// Handle non-existing routes
+app.use((req, res, next) => {
+  serverLog(`User tried to access non-existing route: ${req.url}`);
+  res.status(404).send({ error: '404: Page not found'});
+});
+
+
+// TODO: use environment variables or remove
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  serverLog(`Server is running on port ${PORT}`);
 });
+
+// server logging
+function serverLog(message) {
+  const now = new Date();
+  const formattedDate = now.toISOString(); // Format as ISO 8601 string
+  console.log(`[${formattedDate}] ${message}`);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

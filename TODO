@@ -14,35 +14,50 @@
 -[x] see if i can throw out redundancy in themes
 
 # Frontend
--[] filtering of names 
-  -[] only match from beginning! for prenames and surenames
+-[] media queries for different screen sizes (use rem and/or em - to support safari)        !!!!!!!!!!!!!!!!!!!!!!!!!!!
+  -[] search bar and list must be resizable
+    -[] both must have same size fluently in all different width 
+    -[] very difficult with realtive values. use more absolute values and therefore redefine xs, sm, lg etc 
+    -[] take care of height also ! buttons are overlaying on small height 
+  -[] in mobile mode: either smaller text size or different organization 
+      (maybe only one column?)
+-[x] make scrollbar shorter in webkit browser! it overlfows !
+-[x] filtering of names 
+  -[x] mark query pattern in results (bold)
+-[x] set rowID to actual id, not to number
+-[x] fix stuff shown in inspect console (warnings are firefox stuff)
+-[x] in App.scss see what we can move to mui styling
+-[x] fit result list always to size of results ? 
+
+
+-[x] catch error if backend is unavailable
+-[x] in fetchService: handle errors if backend / database returns error
+
+
+# Backend
+-[x] load data in database 
+  -[x] choose database
+  -[x] add id to data
+-[x] define API
+-[x] create docker container for server
+-[x] create docker container for database 
+-[] check gain if swagger docu correct (especially id) 
+-[] add date to logging
+-[x] filtering of names 
+  -[x] only match from beginning! for prenames and surenames
   -[x] don't care about capital letters
-  -[] mark query pattern in results (bold)
--[] media queries for different screen sizes (use rem and/or em - to support safari)
-  -[] search bar must be resizable
--[] set rowID to actual id, not to number
--[] fix stuff shown in inspect console
+
+# open
+-[] add .env file to manage user, pw, host etc..: https://dev.to/tienbku/dockerize-nodejs-and-postgres-example-4k2j
 -[] add back or x icon to the right of search bar as soon as something is entered in text field 
 -[] add search icon if not text is entered ?  
 -[] maybe use reset CSS stuff for browser inconsistencies: 
   - https://stackoverflow.com/questions/56310875/what-is-best-practice-of-themeprovider-in-styled-components
 -[] try to deal with flickering of result list if possible (maybe bc of mui data grid)
--[] in App.scss see what we can move to mui styling
--[] fit result list always to size of results ? 
--[] catch error if backend is unavailable
-
-
-# Backend
--[] load data in database 
-  -[] choose database
-  -[] add id to data
--[] define API
--[] create docker container for server
--[] create docker container for database 
-
-# whole project 
-
+-[] 
 -[] lint everything
-  -[] same "" or '' everywhere
+  -[x] same "" or '' everywhere
   -[] check indention (especially html)
   -[] check comments
+
+

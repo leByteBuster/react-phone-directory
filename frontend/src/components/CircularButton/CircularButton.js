@@ -1,5 +1,5 @@
-import React from 'react';
-import { Button } from '@mui/material';
+import React from "react";
+import { Button } from "@mui/material";
 
 export default function CircleButton({ onClick, theme, color, isActive }) {
 
@@ -15,11 +15,10 @@ export default function CircleButton({ onClick, theme, color, isActive }) {
        disableElevation
        sx={{
          minWidth: 0,
-         borderRadius: '50%',
-         height: '3em',
-         width: '3em',
-         backgroundColor: color,
-         backgroundColor: isActive ? 'primary.dark' : color,
+         borderRadius: "50%",
+         height: "3em",
+         width: "3em",
+         backgroundColor: isActive ? "primary.dark" : color,
        }}>
      </Button>
   );

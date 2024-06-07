@@ -1,23 +1,22 @@
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = "http://localhost:5000";
 
-const fetchService = {
+const FetchService = {
 
-  // basic fetch function. TODO: pass typed in letters to filter result server side
   fetchPhoneBookEntries: async (query) => {
     try {
       const response = await fetch(`${API_BASE_URL}/search?name=${query}`);
       if (!response.ok) {
-        throw new Error('Bad network response');
+        throw new Error(`${response.status}: ${response.statusText}`);
       }
-      return await response.json();
+        return await response.json();
     } catch (error) {
-      console.error('Error fetching data:', error);
-      // TODO Handle error appropriately
-      throw error;
+      throw new Error("Failed to fetch data due to network error");
     }
   },
 
-  // TODO apply json() directly
+  /* 
+   * mockFetchPhoneBookEntries mocks a data fetch for testing purposes  
+  */
   mockFetchPhoneBookEntries: (query) => {
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -66,4 +65,4 @@ const fetchService = {
 }
 };
 
-export default fetchService;
+export default FetchService;

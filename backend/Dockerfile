@@ -2,7 +2,7 @@
 FROM node:20.14.0-slim
 
 # Create and change to the app directory
-WORKDIR /home/lenovob/Development/react-phone-directory/backend
+WORKDIR /usr/src/phonebook_server
 
 # Install app dependencies
 COPY package*.json ./
