@@ -35,28 +35,41 @@ const highlightSubstring = (text, substring) => {
 
 
 const columns = (query) => [
-  { field: "name", headerName: "Name", width: 220, renderCell: (params) => highlightSubstring(params.value, query)},
-  { field: "phone", headerName: "Phone Number", width: 160 },
+  {
+    field: "name",
+    headerName: "Name",
+    flex: 1,
+    renderCell: (params) => highlightSubstring(params.value, query)
+  },
+  {
+    field: "phone",
+    headerName: "Phone Number",
+    flex: 1,
+  },
 ];
 
 export default function ResultList({ results, query }) {
 
   return (
   <Container 
+    disableGutters
     sx={{ 
       width: {
-        xs: 200, // >= 0 
-        sm: 348, // >= 600
-        md: 450, // >= 900 
+        xxsmall: "95%", // width >= 0 
+        xsmall:  "95%", // width >= 100
+        small:   "95%", // width >= 200
+        middle:  "95%", // width >= 300
+        large:   "80%", // width >= 400
+        xlarge:   400,  // width >= 500      
       },
-      maxHeight: "80vh",
+      maxHeight: "calc(90vh - 100px)",
       visibility: results.length > 0 ? "visible" : "hidden" 
     }}
   >
     <Box 
       sx={{ 
         height: "100%", 
-        width: "100%"
+        width: "100%",
       }}
     >
       <DataGrid
@@ -80,10 +93,21 @@ export default function ResultList({ results, query }) {
             borderRadius: "0 0 25px 25px",
             height: "100%",
             maxHeight: "100%",
-            fontSize: 15,
+            fontSize: {
+              xxsmall: "0.8em", // width >= 0 
+              xsmall:  "1em",   // width >= 100
+              small:   "1.2em", // width >= 200
+              middle:  "1.5em", // width >= 300
+              large:  "1.6em",  // width >= 400
+            },
             fontWeight: 400,
             "& .MuiDataGrid-cell": {
-              paddingLeft: "2rem",
+              paddingLeft: {
+                xxsmall: "0.5em", // width >= 0 
+                xsmall:  "0.5em", // width >= 100
+                small:   "1em",   // width >= 200
+                middle:  "1.1em",   // width >= 300
+              },
               border: "none",
             },
           

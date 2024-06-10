@@ -16,6 +16,16 @@ const lightTheme = createTheme({
       lightdark: "#e2d7ab"
     },
   },
+  breakpoints: {
+    values: {
+      xxsmall: 0,
+      xsmall: 100,
+      small: 200,
+      middle: 300,
+      large: 400,
+      xlarge: 500,
+    },
+  },
  });
 
 const orangeTheme = createTheme({
@@ -28,6 +38,16 @@ const orangeTheme = createTheme({
       primary: "#353535"
     }
   },
+breakpoints: {
+    values: {
+      xxsmall: 0,
+      xsmall: 100,
+      small: 200,
+      middle: 300,
+      large: 400,
+      xlarge: 500,
+    }, 
+  },
 });
 
 const darkTheme = createTheme({
@@ -35,6 +55,16 @@ const darkTheme = createTheme({
     mode: "dark",
     primary: {
       main: "#000000",
+    },
+  },
+  breakpoints: {
+    values: {
+      xxsmall: 0,
+      xsmall: 100,
+      small: 200,
+      middle: 300,
+      large: 400,
+      xlarge: 500,
     },
   },
 });
@@ -48,6 +78,16 @@ const roseTheme = createTheme({
     text: {
       primary: "#353535"
     }
+  },
+  breakpoints: {
+    values: {
+      xxsmall: 0,
+      xsmall: 100,
+      small: 200,
+      middle: 300,
+      large: 400,
+      xlarge: 500,
+    },
   },
 });
 

@@ -22,11 +22,14 @@ export default function SearchBar({ onSearch, listLength }) {
         transform: listLength > 0 ? "translateY(0)" : "translateY(-15%)",
         transition: "transform 0.5s ease 0.3s",
         width: {
-          xs: 170, // >= 0 
-          sm: 300, // >= 600
-          md: 400, // >= 900 
-        },
-    }}    
+          xxsmall: "95%", // width >= 0 
+          xsmall:  "95%", // width >= 100
+          small:   "95%", // width >= 200
+          middle:  "95%", // width >= 300
+          large:   "80%", // width >= 400
+          xlarge:   400,  // width >= 500      
+        },    
+      }}    
     >
       <TextField
         fullWidth
