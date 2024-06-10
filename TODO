@@ -1,3 +1,23 @@
+# open
+-[] better responsiveness. resizing - especially of fonts - can be improved 
+-[] add .env file to manage user, pw, host etc..: https://dev.to/tienbku/dockerize-nodejs-and-postgres-example-4k2j
+-[] add back or x icon to the right of search bar as soon as something is entered in text field 
+-[] add search icon if not text is entered ?  
+-[] maybe use reset CSS stuff for browser inconsistencies: 
+  - https://stackoverflow.com/questions/56310875/what-is-best-practice-of-themeprovider-in-styled-components
+-[] try to deal with flickering of result list if possible (maybe bc of mui data grid)
+-[] 
+-[] lint everything
+  -[] check indention (especially html)
+  -[] check comments
+-[] only restore data if none 
+-[] check gain if swagger docu correct (especially id) 
+-[] add swagger docu for non-existing paths
+-[] split last WIP commits to logical chunks
+
+
+# done 
+-[x] same "" or '' everywhere
 -[x] create search bar
 -[x] create list
   -[x] use mui data grid for table
@@ -12,14 +32,13 @@
   - [x] add Roboto 
 -[x] use mixins in css or see how its done with mui
 -[x] see if i can throw out redundancy in themes
-
-# Frontend
--[] media queries for different screen sizes (use rem and/or em - to support safari)        !!!!!!!!!!!!!!!!!!!!!!!!!!!
-  -[] search bar and list must be resizable
-    -[] both must have same size fluently in all different width 
-    -[] very difficult with realtive values. use more absolute values and therefore redefine xs, sm, lg etc 
-    -[] take care of height also ! buttons are overlaying on small height 
-  -[] in mobile mode: either smaller text size or different organization 
+-[x] media queries for different screen sizes (use rem and/or em - to support safari)        !!!!!!!!!!!!!!!!!!!!!!!!!!!
+  -[x] search bar and list must be resizable
+    -[x] both must have same size fluently in all different width (>250)
+    -[x] take care of height also ! buttons are overlaying on small height 
+    -[x] use own breakpoints 
+      -> overwriting existing ones led to resizing problems due to predefined max-width values for them. so i used my own
+  -[x] in mobile mode: either smaller text size or different organization 
       (maybe only one column?)
 -[x] make scrollbar shorter in webkit browser! it overlfows !
 -[x] filtering of names 
@@ -28,36 +47,17 @@
 -[x] fix stuff shown in inspect console (warnings are firefox stuff)
 -[x] in App.scss see what we can move to mui styling
 -[x] fit result list always to size of results ? 
-
-
 -[x] catch error if backend is unavailable
 -[x] in fetchService: handle errors if backend / database returns error
-
-
-# Backend
 -[x] load data in database 
   -[x] choose database
   -[x] add id to data
 -[x] define API
 -[x] create docker container for server
 -[x] create docker container for database 
--[] check gain if swagger docu correct (especially id) 
--[] add date to logging
+-[x] add date to logging
 -[x] filtering of names 
   -[x] only match from beginning! for prenames and surenames
   -[x] don't care about capital letters
-
-# open
--[] add .env file to manage user, pw, host etc..: https://dev.to/tienbku/dockerize-nodejs-and-postgres-example-4k2j
--[] add back or x icon to the right of search bar as soon as something is entered in text field 
--[] add search icon if not text is entered ?  
--[] maybe use reset CSS stuff for browser inconsistencies: 
-  - https://stackoverflow.com/questions/56310875/what-is-best-practice-of-themeprovider-in-styled-components
--[] try to deal with flickering of result list if possible (maybe bc of mui data grid)
--[] 
--[] lint everything
-  -[x] same "" or '' everywhere
-  -[] check indention (especially html)
-  -[] check comments
 
 

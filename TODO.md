@@ -1,0 +1,59 @@
+# Open
+- [ ] Better responsiveness. Resizing - especially of fonts - can be improved.
+- [ ] Add .env file to manage user, password, host, etc.: [link](https://dev.to/tienbku/dockerize-nodejs-and-postgres-example-4k2j)
+- [ ] Add back or x icon to the right of search bar as soon as something is entered in text field.
+- [ ] Add search icon if no text is entered.
+- [ ] Maybe use reset CSS for browser inconsistencies:
+  - [Link](https://stackoverflow.com/questions/56310875/what-is-best-practice-of-themeprovider-in-styled-components)
+- [ ] Try to deal with flickering of result list if possible (maybe because of MUI Data Grid).
+- [ ] Lint everything:
+  - [ ] Check indentation (especially HTML).
+  - [ ] Check comments.
+- [ ] Only restore data if none exists.
+- [ ] Check again if Swagger documentation is correct (especially ID).
+- [ ] Add Swagger documentation for non-existing paths.
+- [ ] Split last WIP commits into logical chunks.
+
+# Done
+- [x] Use the same `""` or `''` everywhere.
+- [x] Create search bar.
+- [x] Create list:
+  - [x] Use MUI Data Grid for table.
+- [x] Create fetch service.
+- [x] Use CSS transitions for smoothness.
+- [x] Change color and background of scrollbar (removed for Firefox).
+- [x] Sort list by names.
+- [x] Create buttons to change themes.
+- [x] Introduce themes for different styles.
+- [x] Change font-family of text-field (so caret is not positioned weirdly anymore).
+  - [x] Cause: Helvetica.
+  - [x] Add Roboto.
+- [x] Use mixins in CSS or see how it’s done with MUI.
+- [x] See if I can eliminate redundancy in themes.
+- [x] Use media queries for different screen sizes (use rem and/or em - to support Safari):
+  - [x] Search bar and list must be resizable.
+    - [x] Both must have the same size fluently in all different widths (>250).
+    - [x] Take care of height also! Buttons are overlaying on small height.
+    - [x] Use own breakpoints:
+      - Overwriting existing ones led to resizing problems due to predefined max-width values for them, so I used my own.
+  - [x] In mobile mode: either smaller text size or different organization (maybe only one column?).
+- [x] Make scrollbar shorter in WebKit browsers! It overflows!
+- [x] Filtering of names:
+  - [x] Mark query pattern in results (bold).
+- [x] Set rowID to actual ID, not to number.
+- [x] Fix issues shown in inspect console (warnings are Firefox-related).
+- [x] In `App.scss`, see what can be moved to MUI styling.
+- [x] Fit result list always to size of results.
+- [x] Catch error if backend is unavailable.
+- [x] In `fetchService`: handle errors if backend/database returns error.
+- [x] Load data into the database:
+  - [x] Choose database.
+  - [x] Add ID to data.
+- [x] Define API.
+- [x] Create Docker container for server.
+- [x] Create Docker container for database.
+- [x] Add date to logging.
+- [x] Filtering of names:
+  - [x] Only match from beginning! For first names and surnames.
+  - [x] Don't care about capital letters.
+
