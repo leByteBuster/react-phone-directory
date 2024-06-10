@@ -11,7 +11,8 @@
   - high usability on different devices
 
 ###  realisation of needs
-  - responsive 
+  - reliable responsiveness for designs width >= 250px
+    - usage of mui custom breakpoints
   - different themes for different preferences
   - mui data grid for live update list 
   - search bar in the middle first for aesthetics, moves up as soon as results appear to make room for them
@@ -53,10 +54,12 @@
     - scalability 
 
 ## possible improvements in the code:
+  - responsiveness of font size not perfect yet 
   - split up App.js (a little too much going on there right now)
   - more consistency in component structure 
   - more consistency for comments 
   - better color choices for themes (could be better)
   - add tests
   - see open issues in TODO
+
 
